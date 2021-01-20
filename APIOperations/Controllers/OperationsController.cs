@@ -1,87 +1,50 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace APIOperations.Controllers
 {
+    [Route("api/operations")]
+    [ApiController]
+    [Produces("application/json")]
     public class OperationsController : Controller
     {
-        // GET: OperationsController
-        public ActionResult Index()
+        // POST api/<OperationsController>
+        [HttpPost("sum")]
+        public IActionResult sum([FromBody] Input input)
         {
-            return View();
-        }
-
-        // GET: OperationsController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: OperationsController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: OperationsController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
+            Operations op = new Operations();
+            int soma = 0;
+            foreach (int element in input.Numbers)
             {
-                return RedirectToAction(nameof(Index));
+                soma = op.sum(soma, element);
             }
-            catch
-            {
-                return View();
-            }
+
+            OperationResult inp = new OperationResult();
+            inp.result = soma;
+
+
+            return Json(inp);
         }
 
-        // GET: OperationsController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpPost("average")]
+
+        public IActionResult average([FromBody] Input input)
         {
-            return View();
+            Operations op = new Operations();
+            int soma = 0;
+            foreach (int element in input.Numbers)
+            {
+                soma = op.sum(soma, element);
+            }
+            double average = op.divide(soma, input.Numbers.Length);
+
+            OperationResult inp = new OperationResult();
+            inp.result = average;
+
+            return Json(inp);
+
         }
 
-        // POST: OperationsController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: OperationsController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: OperationsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
+
 }
