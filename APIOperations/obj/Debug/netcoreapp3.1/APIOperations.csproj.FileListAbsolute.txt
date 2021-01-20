@@ -18,3 +18,9 @@ C:\Users\Felipe\source\repos\APIOperations\APIOperations\obj\Debug\netcoreapp3.1
 C:\Users\Felipe\source\repos\APIOperations\APIOperations\obj\Debug\netcoreapp3.1\APIOperations.dll
 C:\Users\Felipe\source\repos\APIOperations\APIOperations\obj\Debug\netcoreapp3.1\APIOperations.pdb
 C:\Users\Felipe\source\repos\APIOperations\APIOperations\obj\Debug\netcoreapp3.1\APIOperations.genruntimeconfig.cache
+C:\Users\Felipe\source\repos\APIOperations\APIOperations\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Felipe\source\repos\APIOperations\APIOperations\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Felipe\source\repos\APIOperations\APIOperations\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Felipe\source\repos\APIOperations\APIOperations\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Felipe\source\repos\APIOperations\APIOperations\obj\Debug\netcoreapp3.1\APIOperations.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Felipe\source\repos\APIOperations\APIOperations\obj\Debug\netcoreapp3.1\APIOperations.csproj.CopyComplete

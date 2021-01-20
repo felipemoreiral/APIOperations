@@ -25,6 +25,16 @@ namespace APIOperations
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddSwaggerGen(a =>
+            {
+                a.SwaggerDoc("V1",
+                    new Microsoft.OpenApi.Models.OpenApiInfo
+                    {
+                        Title = "API"
+                    });
+            });
+
             services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
@@ -46,6 +56,13 @@ namespace APIOperations
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/V1/swagger.json", "API");
+            });
 
             app.UseEndpoints(endpoints =>
             {
